@@ -1,0 +1,398 @@
+
+@media screen { /* pc screen */
+  select {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 800px) { /* tablet */
+  select {
+    width: 160px;
+  }
+
+  #divButtons {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #divCheck {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) { /* phone */
+  #divCheck {
+    display: none;
+  }
+
+  select {
+    width: 130px;
+  }
+
+  #divButtons {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #divCheck {
+    display: none;
+  }
+
+  select {
+    width: 100px;
+  }
+
+  #divButtons {
+    width: 50%;
+  }
+}
+
+#help {
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+  margin: 15px;
+  background-color: black;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  z-index: 1;
+  background-image: url('src/help.png');
+}
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#divCheck {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #990099;
+  border-radius: 12px;
+  top: 20px;
+  width: 80px;
+  margin: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e7e7e7;
+  color: black;
+}
+
+button:focus {
+  outline:0;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: #e7e7e7;
+  color: black;
+  opacity: 0.5;
+}
+
+select {
+  position: absolute;
+  background-color: #990099;
+  color: white;
+  height: 38px;
+  top: 20px;
+  right: 20px;
+  border: none;
+  font-size: 16px;
+  padding-left: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: 0;
+}
+
+#divRange
+{
+  position: absolute;
+  left: 40%;
+  bottom: 36px;
+  width: 20%
+}
+
+#range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#range:hover {
+    opacity: 1;
+}
+
+#range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #990099;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #990099;
+    cursor: pointer;
+}
+
+#divButtons {
+  position: absolute;
+  padding: 15px;
+  top: 0px;
+  left: 0px;
+}
+
+#leftButton {
+  width: 40px;
+}
+
+#rightButton {
+  width: 40px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #990099;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#divImage {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+#divLeft {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  top: -46px;
+  margin-right: 5px;
+}
+
+#divCenter {
+  width: 30%;
+  display: inline-block;
+}
+
+#divRight {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  top: -46px;
+  margin-left: 5px;
+}
+
+#divAdd {
+  position: absolute;
+  margin: 15px;
+  top: calc(100% - 100px);
+  left: 0px;
+}
+
+#divHelp {
+  position: absolute;
+  margin: 15px;
+  top: calc(100% - 100px);
+  left: calc(100% - 100px);
+}
+
+#divMass {
+  text-align: right;
+  width: 90%;
+}
+
+#mass {
+  margin-left: 23px;
+}
+
+#divDiameter {
+  text-align: right;
+  width: 90%;
+}
+
+#divVelocityX {
+  text-align: right;
+  width: 90%;
+}
+
+#divVelocityY {
+  text-align: right;
+  width: 90%;
+}
+
+#divPlanetCreation {
+  position: absolute;
+  margin: 15px;
+  top: calc(100% - 383px);
+  width: 300px;
+  height: 350px;
+  background-color: black;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+#quitButton {
+  position: relative;
+  left: calc(50% - 50px);
+  top: 90%;
+}
+
+#divCreate {
+  margin: 0 auto;
+  display: table;
+  margin-top: 5px;
+}
+
+#addButton {
+  width: 60px;
+  height: 60px;
+  font-size: 36px;
+}
+
+#helpButton {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.inputText {
+  padding: 3px 20px;
+  width: 120px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+.labelText {
+  color: white;
+  font-size: 16px;
+}
+
+.velocityText {
+  padding: 3px 20px;
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+#planetName {
+  text-align: center;
+  height: 30px;
+  font-size: 30px;
+  font-style: italic;
+  color: white;
+  margin: 0;
+}
+
+#createButton {
+  margin-right: 30px;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+}
+
+#background {
+    position: absolute;
+    background-image: url('src/space.png');
+    background-repeat: repeat;
+    background-size: 1000px 1000px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

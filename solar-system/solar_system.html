@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="solar_system.css">
+    <link rel="shortcut icon" href="src/sun.ico" />
+    <title>Solar System</title>
+  </head>
+  <body id="body" onresize="resize()" style='margin: 0px; padding: 0px;'>
+    <div id="background"></div>
+    <canvas id="canvas"></canvas>
+    <img hidden id="placingPlanet" src="src/sun.png">
+    <div id="divButtons">
+      <button id="startButton" onclick="startSimulation()" class="gui">Start</button>
+      <button id="pauseButton" onclick="pauseSimulation()" class="gui">Pause</button>
+      <button id="resetButton" onclick="resetSimulation()" class="gui">Reset</button>
+      <button id="clearButton" onclick="clearSimulation()" class="gui">Clear</button>
+    </div>
+    <select id="select" onchange="adaptTime()" onkeydown="return false;">
+      <option value="seconds">Seconds</option>
+      <option value="minutes">Minutes</option>
+      <option value="hours">Hours</option>
+      <option value="days">Days</option>
+      <option value="weeks">Weeks</option>
+      <option value="months" selected>Months</option>
+      <option value="years">Years</option>
+    </select>
+    <div id="divCheck">
+      <label class="container">Display names
+        <input id="checkboxNames" type="checkbox" onclick="checkNames()" checked />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Display trajectories
+        <input id="checkboxTrajectories" type="checkbox" onclick="checkTrajectories()" checked />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div id="help" hidden>
+      <button id="quitButton" onclick="quitHelp()" class="gui">Quit</button>
+    </div>
+    <div id="divPlanetCreation" hidden>
+      <p id="planetName">Sun</p>
+      <div id="divImage">
+        <div id="divLeft">
+          <button id="leftButton" onclick="leftChange()" class="change"><</button>
+        </div>
+        <div id="divCenter">
+          <img id="planetImage" style="width:100px;height:100px;" alt="Planet Image">
+        </div>
+        <div id="divRight">
+          <button id="rightButton" onclick="rightChange()" class="change">></button>
+        </div>
+      </div>
+      <div id="divMass">
+        <label for="mass" class="labelText">Mass [kg] </label>
+        <input placeholder="0" id="mass" type="text" class="inputText">
+      </div>
+      <div id="divDiameter">
+        <label for="diameter" class="labelText">Diameter [m] </label>
+        <input placeholder="0" id="diameter" type="text" class="inputText">
+      </div>
+      <div id="divVelocityX">
+        <label for="velocityX" class="labelText">Speed along x axis [m/s] </label>
+        <input placeholder="0" id="velocityX" type="text" class="velocityText">
+      </div>
+      <div id="divVelocityY">
+        <label for="velocityY" class="labelText">Speed along y axis [m/s] </label>
+        <input placeholder="0" id="velocityY" type="text" class="velocityText">
+      </div>
+      <div id="divCreate">
+        <button id="createButton" onclick="placePlanet()" class="gui">Create</button>
+        <button id="cancelButton" onclick="cancel()" class="gui">Cancel</button>
+      </div>
+    </div>
+    <div id="divAdd">
+      <button id="addButton" onclick="addPlanet()" class="gui">+</button>
+    </div>
+    <div id="divRange">
+      <input id="range" type="range" min="0" max="1000" value="450" oninput="changeRatio()" onkeydown="return false;"></input>
+    </div>
+    <div id="divHelp">
+      <button id="helpButton" onclick="displayHelp()" class="gui">?</button>
+    </div>
+    <script src="solar_system.js"></script>
+    <script src="planet.js"></script>
+    <script src="vector.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('keydown', keyDown);
+      window.addEventListener('keyup', keyUp);
+    </script>
+  </body>
+</html>
